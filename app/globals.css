@@ -1,0 +1,737 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin-bottom: 32px;
+}
+
+h2 {
+  margin-bottom: 24px;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+h4 {
+  margin-bottom: 16px;
+}
+
+body {
+  color: #fff;
+  background: rgb(19, 18, 18);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0 0 16px 0;
+}
+
+.header {
+  display: flex;
+  background-color: gray;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.header > div {
+  display: flex;
+  justify-content: space-between;
+  align-content: baseline;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+main {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 120px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(37, 37, 37);
+  width: auto;
+  max-width: 675px;
+  margin: 0 auto;
+  padding: 40px 40px 24px;
+  border-radius: 16px;
+}
+
+form > div {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-search input,
+form > div input {
+  border: none;
+  padding: 8px 4px;
+  border-radius: 8px;
+}
+
+.header-search input {
+  border: 1px solid #e7f900;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+form textarea {
+  resize: none;
+  min-height: 150px;
+  border-radius: 8px;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+header .container > div,
+header .container > nav {
+  flex: 1;
+}
+
+header .container > nav {
+  display: flex;
+  justify-content: end;
+}
+
+header .header-search input {
+  min-width: 420px;
+}
+
+header button,
+form button {
+  width: max-content;
+  padding: 8px 24px;
+  cursor: pointer;
+  background-color: #e7f900;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+form label {
+  font-size: 12px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+form label span {
+  margin-left: 4px;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+form .error {
+  font-size: 12px;
+  color: rgb(255, 86, 86);
+  margin-top: 4px;
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+  padding: 8px 24px;
+  background: transparent;
+  color: rgb(235, 223, 66);
+  border: 1px solid #e7f900;
+  margin-top: 4px;
+  border-radius: 8px;
+}
+
+input[type="file"] {
+  padding: 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  padding: 16px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #e7f900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+.profile-menu {
+  position: relative;
+}
+.profile-menu nav {
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 48px;
+  padding: 24px 16px 8px;
+  border-radius: 8px;
+  color: #222;
+  z-index: 1000;
+  min-width: 240px;
+}
+
+.profile-menu nav li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.profile-menu nav li:first-letter {
+  text-transform: uppercase;
+}
+
+.profile-menu nav button {
+  margin-top: 16px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.auth-links {
+  display: flex;
+  gap: 16px;
+}
+
+.auth-links li a {
+  padding: 8px 24px;
+}
+
+.auth-links li:nth-of-type(1) a {
+  background-color: #e7f900;
+  color: #222;
+  font-weight: 700;
+}
+
+.auth-links li:nth-of-type(2) a {
+  border: 1px solid #e7f900;
+}
+
+.form-text-bottom {
+  display: flex;
+  margin-top: 24px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-text {
+  display: flex;
+  align-items: end;
+}
+
+.form-text,
+.form-text-bottom a {
+  color: #e7f900;
+  font-size: 12px;
+}
+
+.listings.listings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding-bottom: 80px;
+}
+
+.listings.listings h2 {
+  color: #e7f900;
+  margin-bottom: 16px;
+  font-size: 20px;
+  max-width: 240px;
+  min-height: 48px;
+}
+.listings.listings:not(:last-of-type) p {
+  margin-bottom: 40px;
+}
+
+.listings.listings h2:first-letter {
+  text-transform: uppercase;
+}
+
+.listing-item {
+  border: 1px solid #848d00;
+  padding: 40px 32px 32px;
+  position: relative;
+}
+
+.listing-item p {
+  font-size: 14px;
+}
+
+.listing-item > span {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: #848d00;
+  font-size: 10px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+form .flex {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+form .flex > div {
+  width: 50%;
+}
+
+form .flex > div input {
+  width: 100%;
+}
+
+input:disabled {
+  background-color: gray;
+}
+
+.checkboxes-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+  flex-direction: row-reverse;
+}
+
+.checkboxes-wrapper > label {
+  margin-bottom: 0;
+}
+
+.flex-reverse {
+  margin-top: -16px;
+}
+.additional-options-wrapper > span {
+  margin-bottom: 8px;
+}
+
+.additional-options-wrapper > div {
+  display: flex;
+  column-gap: 16px;
+}
+
+.filepond--list {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+
+  grid-gap: 10px; /* Adjust the gap between grid items */
+}
+
+.filepond--item {
+  width: calc(50% - 0.5em);
+  margin-right: 10px; /* Adjust the margin to create space between images */
+}
+.listing-page {
+  position: relative;
+}
+
+.listing-page > div {
+  width: fit-content;
+  position: relative;
+}
+
+.listing-page a {
+  background-color: #e7f900;
+  color: black;
+  margin-top: 16px;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+@media (min-width: 30em) {
+  .filepond--item {
+    width: calc(50% - 0.5em);
+  }
+}
+
+@media (min-width: 50em) {
+  .filepond--item {
+    width: calc(20% - 0.5em);
+  }
+}
+
+/* use a hand cursor intead of arrow for the action buttons */
+.filepond--file-action-button {
+  cursor: pointer;
+}
+
+/* the text color of the drop label*/
+.filepond--drop-label {
+  color: #555;
+}
+
+/* underline color for "Browse" button */
+.filepond--label-action {
+  text-decoration-color: #aaa;
+}
+
+/* the background color of the filepond drop area */
+.filepond--panel-root {
+  background-color: #eee;
+}
+
+/* the border radius of the drop area */
+.filepond--panel-root {
+  border-radius: 0.5em;
+}
+
+/* the border radius of the file item */
+.filepond--item-panel {
+  border-radius: 0.5em;
+}
+
+/* the background color of the file and file panel (used when dropping an image) */
+.filepond--item-panel {
+  background-color: #555;
+}
+
+/* the background color of the drop circle */
+.filepond--drip-blob {
+  background-color: #999;
+}
+
+/* the background color of the black action buttons */
+.filepond--file-action-button {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* the icon color of the black action buttons */
+.filepond--file-action-button {
+  color: white;
+}
+
+/* the color of the focus ring */
+.filepond--file-action-button:hover,
+.filepond--file-action-button:focus {
+  box-shadow: 0 0 0 0.125em rgba(255, 255, 255, 0.9);
+}
+
+/* the text color of the file status and info labels */
+.filepond--file {
+  color: white;
+}
+
+/* error state color */
+[data-filepond-item-state*="error"] .filepond--item-panel,
+[data-filepond-item-state*="invalid"] .filepond--item-panel {
+  background-color: red;
+}
+
+[data-filepond-item-state="processing-complete"] .filepond--item-panel {
+  background-color: green;
+}
+
+/* bordered drop area */
+.filepond--panel-root {
+  background-color: transparent;
+  border: 2px solid #2c3340;
+}
+
+.filepond--root {
+  max-height: 20rem;
+}
+
+.filepond--item {
+  max-height: 120px; /* Set your desired maximum height */
+  overflow: hidden; /* Hide any overflow beyond the maximum height */
+}
+
+.filepond--item img {
+  max-width: 100%; /* Ensure images do not exceed the width of their container */
+  height: auto; /* Maintain the aspect ratio of the images */
+}
+
+/* Add this CSS to your stylesheet */
+/* .filepond--drop-label, */
+.filepond--root,
+.filepond--list,
+.filepond--panel {
+  position: static !important; /* Override the default position: absolute */
+}
+
+/* If necessary, reset other positioning properties */
+/* .filepond--drop-label, */
+.filepond--root,
+.filepond--list,
+.filepond--panel {
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+.rdw-editor-wrapper {
+  background-color: white;
+  border-radius: 8px;
+  color: black;
+}
+
+.table {
+  border: 1px solid gray;
+  border-bottom: none;
+  border-right: none;
+}
+
+.table > div,
+.table > div > span {
+  flex: 1;
+  display: flex;
+}
+
+.table > div > span {
+  padding: 8px;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+img {
+  max-width: 250px;
+  object-fit: contain;
+}
+
+.text-editor {
+  background-color: white;
+  border-radius: 4px;
+}
+
+.text-editor .toolbar {
+  padding: 8px;
+}
+
+.text-editor > div:not(.toolbar) {
+  border: 1px solid rgb(206, 206, 206);
+  border-bottom: none;
+  border-right: none;
+  min-height: 100px;
+}
+.ProseMirror {
+  height: 100%;
+  min-height: 100px;
+  padding: 8px;
+  color: #222;
+}
+
+.filepond--root {
+  margin-bottom: 0 !important;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: auto;
+}
+
+.conversations {
+  background-color: #eee;
+  min-height: 240px;
+  width: 100%;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.message-receiver,
+.message-sender {
+  color: #2c3340;
+}
+
+.message-sender {
+  text-align: right;
+}
+
+.conversation-teaser {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 100px;
+  gap: 32px;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.pswp__button--zoom {
+  display: block !important;
+}
+
+.conversation-teaser > span,
+.conversation-teaser > div,
+.conversation-teaser {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.conversation-teaser p {
+  margin: 0;
+}
+
+.conversation-teaser span {
+  display: block;
+}
+
+.favorite,
+.favorite-liked {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  cursor: pointer;
+}
+
+.favorite {
+  fill: #aaa;
+}
+
+.favorite-liked {
+  fill: #e7f900;
+}
+
+.listing-page > div .favorite,
+.listing-page > div .favorite-liked {
+  top: 8px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #e7f900 !important;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  object-fit: cover;
+  width: 100%;
+  max-width: unset;
+}
+.conversations-form a {
+  color: #e7f900;
+  display: inline;
+  cursor: pointer;
+}
+
+.conversation-form-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.form-flex {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+}
+
+.form-flex label {
+  cursor: pointer;
+}
+
+.listing-page a.default-link {
+  background-color: transparent;
+  color: #e7f900;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.rating {
+  margin: 16px 0;
+  background-color: #292929;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-rating-tabs {
+  display: flex;
+  margin: 24px 0 16px;
+  gap: 24px;
+}
+
+.rating p {
+  margin-bottom: 0;
+}
+
+.conversations-form a.link-disabled {
+  cursor: auto;
+  color: #555;
+  pointer-events: none;
+}
+
+.tab {
+  display: flex;
+}
+
+.tab .active {
+  border-bottom: 1px solid #e7f900;
+}
+
+.tab .positive {
+  color: #00ff00;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.tab .negative {
+  color: #ff0000;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.all-user-listings {
+  display: block !important;
+  background-color: transparent !important;
+  color: #e7f900 !important;
+  padding: 0 !important;
+}
+
+.change-listing {
+  background-color: #e7f900;
+  color: #000;
+  padding: 8px 16px;
+  margin-top: 24px;
+  display: block;
+  width: max-content;
+}
+
+/* .backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    background-color: white;
+    padding: 40px;
+    border-radius: 16px;
+  }
+} */
+
+.sort {
+  margin-bottom: 24px;
+}
